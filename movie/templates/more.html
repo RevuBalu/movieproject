@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="row">
+<img src="{{h.image.url}}"style="height:300px;width:30%">
+<div class="col-sm-4" >
+    <div class="card" style="width: 18rem;">
+
+        <div class="card-body">
+          <h5 class="card-title">{{h.title}}</h5>
+           <h6 class="card-subtitle mb-2 text-muted">{{h.subtitle}}</h6>
+           <p class="card-text">{{h.year}}</p>
+           <a href="{% url 'update' h.title %}" class="btn btn-danger">Update</a>
+        <a href="{% url 'delete' h.title %}" class="btn btn-danger">Delete</a>
+
+
+        </div>
+    </div></div>
+
+{% endblock %}
+    </div>
+
+</body>
+</html>
